@@ -1,3 +1,4 @@
-.xml
-.mp3
-.txt
+*.xml
+*.mp3
+*.txt
+*.*html
