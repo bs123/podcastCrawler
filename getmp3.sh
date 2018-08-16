@@ -1,9 +1,11 @@
 #/bin/sh
 echo "usage  ./getmp3.sh file.html mp_type "
 
-for file in $(grep -Eo "http:.*.$2" $1 | grep $2  | sed 's/\"//g'| cut -d '>' -f1 | grep cdn)
+#for file in $(grep -Eo "http:.*.$2" $1 | grep $2  | sed 's/\"//g'| cut -d '>' -f1 | grep cdn)
 #TODO duppletten weg ohne sort
 #for file in $(grep -Eo "http:.*.$2" $1 | grep $2  | sed 's/\"//g'| cut -d '>' -f1 | grep cdn | sort -u)
+for file in $( grep -Eo "https:.*.$2" $1)
+
 
 #for file in $(grep $2 $1 )
   do
@@ -17,6 +19,6 @@ for file in $(grep -Eo "http:.*.$2" $1 | grep $2  | sed 's/\"//g'| cut -d '>' -f
      done
 
       echo  $file
-      #wget $file &
+      wget $file &
 
   done

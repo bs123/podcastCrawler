@@ -20,3 +20,11 @@ check, ACHTUNG Edit of file, only work on Copy!
  for f in *.mp3 ; do  sed -i 's/\^*'$f'/xxxXxxx/g' radiowissenBis150722_links_2_check2.txt;  sleep 2 ; done
 
  sed 's/\^*150109_0905_radioWissen_Andere-Laender-andere-Satiren---Korresponde.mp3/xxx/g'  radiowissenBis150218_5.txt
+
+
+suche was schon da ist
+grep -n 161209 mp3-download-podcast-radiowissen.shtml 
+vi :ZeilenNr,$d (lösche bis datei ende)
+17144
+
+./getmp3.sh mp3-download-podcast-radiowissen.shtml mp3 > all2.txt
