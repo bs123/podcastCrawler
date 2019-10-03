@@ -5,7 +5,14 @@ echo "usage  ./getmp3.sh file.html mp_type "
 #TODO duppletten weg ohne sort
 #for file in $(grep -Eo "http:.*.$2" $1 | grep $2  | sed 's/\"//g'| cut -d '>' -f1 | grep cdn | sort -u)
 #for file in $( grep -Eo "https:.*.$2" $1)
-for file in $( grep -Eo "https:.*.$2" $1 | sort -u)
+# sed  's/url/\n/g' ../1000antworten.xml > 1000antworten.txt 
+# sed  's/url/\n/g' wissen.xml > wissen.txt 
+#  split -l 500 1000antworten3.txt 
+
+
+# for file in $( grep -Eo "https:.*.$2" $1 | sort -u)
+for file in $( grep -Eo "https:.*.$2" $1 )
+
 
 
 #for file in $(grep $2 $1 )
