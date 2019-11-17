@@ -2,7 +2,7 @@
 echo "usage  ./getmp3.sh file.html mp_type "
 
 #for url in $(grep -Eo "http:.*.$2" $1 | grep $2  | sed 's/\"//g'| cut -d '>' -f1 | grep cdn)
-#TODO duppletten weg ohne sort
+#duppletten weg ohne sort awk '!a[$0]++' input.txt
 #for url in $(grep -Eo "http:.*.$2" $1 | grep $2  | sed 's/\"//g'| cut -d '>' -f1 | grep cdn | sort -u)
 #for url in $( grep -Eo "https:.*.$2" $1)
 # sed  's/url/\n/g' ../1000antworten.xml > 1000antworten.txt 
@@ -27,6 +27,7 @@ for url in $( grep -Eo "https:.*.$2" $1 )
       if [ ! `/usr/bin/find -type f -name $file | grep "."` ]
         then
           :
+          echo $url 
           #echo download $file
           #wget $url &
       fi
