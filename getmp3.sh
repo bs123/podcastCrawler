@@ -26,9 +26,9 @@ for url in $( grep -Eo "https:.*.$2" $1 )
        #/bin/ps h -C "wget"
      done
 
-      file = $url |  grep -oE "[^/]+$"
-      if (find -type f -name $file| grep -q ".")
-       eoch $file
+      echo $url |  grep -oE "[^/]+$"
+      #if (find -type f -name $file| grep -q ".")
+       #echo $file
        #wget $url &
 
   done
