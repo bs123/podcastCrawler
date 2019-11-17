@@ -9,11 +9,8 @@ echo "usage  ./getmp3.sh file.html mp_type "
 # sed  's/url/\n/g' wissen.xml > wissen.txt 
 #  split -l 500 1000antworten3.txt 
 
-
 # for url in $( grep -Eo "https:.*.$2" $1 | sort -u)
 for url in $( grep -Eo "https:.*.$2" $1 )
-
- 
 
 #for url in $(grep $2 $1 )
   do
@@ -25,10 +22,12 @@ for url in $( grep -Eo "https:.*.$2" $1 )
        #echo `/bin/ps h | /usr/bin/wc -l`
        #/bin/ps h -C "wget"
      done
-
-      echo $url |  grep -oE "[^/]+$"
-      #if (find -type f -name $file| grep -q ".")
-       #echo $file
-       #wget $url &
-
+      file=`echo $url |  grep -oE "[^/]+$"`
+     
+      if [ ! `/usr/bin/find -type f -name $file | grep "."` ]
+        then
+          echo 2222
+          echo $file
+          #wget $url &
+      fi
   done
