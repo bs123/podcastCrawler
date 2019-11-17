@@ -23,11 +23,11 @@ for url in $( grep -Eo "https:.*.$2" $1 )
        #/bin/ps h -C "wget"
      done
       file=`echo $url |  grep -oE "[^/]+$"`
-     
+      echo  $url
       if [ ! `/usr/bin/find -type f -name $file | grep "."` ]
         then
-          echo 2222
-          echo $file
+          :
+          #echo download $file
           #wget $url &
       fi
   done
