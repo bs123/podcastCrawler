@@ -13,6 +13,7 @@ echo "usage  ./getmp3.sh file.html mp_type "
 # for file in $( grep -Eo "https:.*.$2" $1 | sort -u)
 for file in $( grep -Eo "https:.*.$2" $1 )
 
+ #find -type f -name "wo-ist-das-zentrum-unseres-universums.6444m.mp3" | grep -q "."
 
 
 #for file in $(grep $2 $1 )
@@ -26,7 +27,7 @@ for file in $( grep -Eo "https:.*.$2" $1 )
        #/bin/ps h -C "wget"
      done
 
-      echo  $file
-      wget $file &
+      echo  $file |  grep -oE "[^/]+$"
+      #wget $file &
 
   done
