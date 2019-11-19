@@ -16,18 +16,5 @@ for url in $( grep -Eo "https:.*.$2" $1 )
   do
   #echo  ${url:0:${#url}-1}
 
-    while [ `/bin/ps h -C "wget" | /usr/bin/wc -l`  -gt 7 ]
-     do
-       sleep 20
-       #echo `/bin/ps h | /usr/bin/wc -l`
-       #/bin/ps h -C "wget"
-     done
-      file=`echo $url |  grep -oE "[^/]+$"`
-     # echo  $url
-      if [ ! `/usr/bin/find -type f -name $file | grep "."` ]
-        then
-          :
-          #echo $file
-          wget $url &
-      fi
+      echo  $url
   done
